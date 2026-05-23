@@ -1007,6 +1007,9 @@ footer {
   to   { transform: rotate(360deg); }
 }
 
+/* form 2-col grid — collapses on mobile */
+.form-name-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
 /* 26. RESPONSIVE */
 @media (max-width: 1024px) {
   .card-grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -1037,6 +1040,23 @@ footer {
   footer { grid-template-columns: 1fr; text-align: center; }
   .footer-right { text-align: center; }
   .area-features { grid-template-columns: 1fr; }
+  /* spacing */
+  .section { padding: 4.5rem var(--pad); }
+  .section-sm { padding: 2.8rem var(--pad); }
+  .number-item { padding: 2.2rem 1.5rem; }
+  .card { padding: 2.2rem 1.8rem; }
+  /* typography */
+  .page-title { font-size: clamp(3rem, 9vw, 5rem); }
+  .section-title { font-size: clamp(1.9rem, 6vw, 3rem); }
+  .number-value { font-size: 2.8rem; }
+  .card-num { font-size: 3rem; }
+  .card-title { font-size: 1.4rem; }
+  /* layout */
+  .card-grid-4 { grid-template-columns: 1fr; }
+  .form-name-grid { grid-template-columns: 1fr; }
+  .hero-cta-group { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+  .hero-cta-group .btn { justify-content: center; }
+  .certs-list { flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
 }
 
 /* ─── 27. COOKIE BANNER ─── */
