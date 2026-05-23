@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prodotti — LYO Europa</title>
+  <meta name="description" content="Bravo Chef, LYO Snacky, HO.RE.CA. — i prodotti liofilizzati LYO Europa per il retail, la ristorazione e l'industria alimentare.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="lyo-system.css">
+
+  <style>
+    /* Sector toggle — page-specific */
+    .sector-toggle {
+      display: flex;
+      gap: 1px;
+      background: rgba(232,228,220,0.06);
+      margin-bottom: 4rem;
+    }
+    .s-tab {
+      flex: 1;
+      padding: 1.4rem;
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      cursor: none;
+      transition: all 0.3s;
+      color: rgba(232,228,220,0.38);
+      border-bottom: 2px solid transparent;
+    }
+    .s-tab.active { color: var(--sage-light); border-bottom-color: var(--sage-light); background: rgba(107,143,113,0.04); }
+    .s-tab:hover { color: var(--ivory); }
+    .product-panel { display: none; }
+    .product-panel.active { display: block; }
+
+    /* Brand cards */
+    .brand-card {
+      padding: 3rem 2.8rem;
+      background: rgba(232,228,220,0.02);
+      border: 1px solid rgba(232,228,220,0.07);
+      border-radius: 6px;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-card:hover { background: rgba(107,143,113,0.05); border-color: rgba(107,143,113,0.25); transform: translateY(-4px); }
+    .brand-bg {
+      position: absolute;
+      bottom: -1rem; right: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 7rem;
+      font-weight: 300;
+      color: rgba(232,228,220,0.025);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .brand-name { font-family: var(--font-display); font-size: 2.5rem; font-weight: 300; font-style: italic; color: var(--ivory); margin-bottom: 0.4rem; }
+    .brand-tagline { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 1.5rem; }
+    .brand-desc { font-size: 0.85rem; line-height: 1.75; color: rgba(232,228,220,0.45); font-weight: 300; margin-bottom: 1.8rem; }
+    .brand-products { display: flex; flex-direction: column; gap: 0.5rem; }
+    .brand-product-item { font-size: 0.8rem; color: rgba(232,228,220,0.5); padding-left: 1rem; position: relative; }
+    .brand-product-item::before { content: '·'; position: absolute; left: 0; color: var(--sage-light); }
+    .brand-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-light); margin-top: 1.5rem; transition: gap 0.3s; }
+    .brand-link:hover { gap: 1rem; }
+
+    /* Product card tags */
+    .prod-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1.4rem; }
+    .prod-tag { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.7rem; border: 1px solid rgba(107,143,113,0.25); border-radius: 20px; color: var(--sage-light); }
+    .prod-emoji { font-size: 2.2rem; margin-bottom: 1.5rem; display: block; }
+  </style>
+</head>
+<body>
+
+  <canvas id="starfield-canvas"></canvas>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div id="page-transition"></div>
+
+  <!-- NAV -->
+  <nav class="lyo-nav">
+    <a href="lyo-europa.html" class="nav-logo">LYO <span>Europa</span></a>
+    <ul class="nav-links">
+      <li><a href="chi-siamo.html" data-scramble>Chi siamo</a></li>
+      <li><a href="processo.html" data-scramble>Il Processo</a></li>
+      <li><a href="retail.html" class="active" data-scramble>Prodotti</a></li>
+      <li><a href="lyo-europa.html#contact" data-scramble>Contatti</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="area-professionisti.html" class="nav-area-btn">Area Professionisti</a>
+      <a href="area-utente.html" class="nav-area-btn">Area Utente</a>
+      <a href="#" class="nav-lang">IT / EN</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="align-items:flex-end;">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-accent"></div>
+    <div class="page-hero-num">03</div>
+    <div>
+      <p class="page-eyebrow">Retail &amp; HO.RE.CA.</p>
+      <h1 class="page-title">Natura<br>in ogni<br><em>forma</em></h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section gsap-section">
+    <div class="intro-block">
+      <div class="intro-sticky reveal">
+        <p class="section-eyebrow">I nostri prodotti</p>
+        <h2 class="intro-heading">Tre anime,<br>una sola<br><em>filosofia</em></h2>
+      </div>
+      <div class="intro-body reveal reveal-delay-1">
+        <p>I prodotti LYO Europa nascono da un'unica convinzione: <strong>la natura non va alterata, va preservata</strong>. Ogni linea risponde a un'esigenza diversa — il consumatore finale, il professionista della ristorazione, l'industria — ma la tecnologia è la stessa.</p>
+        <p><strong>Bravo Chef</strong> porta la liofilizzazione nelle case italiane. <strong>LYO Snacky</strong> trasforma verdura e frutta in snack croccanti. La linea <strong>HO.RE.CA.</strong> offre ingredienti di eccellenza ai migliori chef.</p>
+        <div class="big-quote">"Non produciamo conserve. Produciamo natura in pausa — pronta a tornare alla vita."</div>
+        <p>Tutti i prodotti sono <strong>100% naturali, senza additivi, senza conservanti</strong>. Il controllo qualità è interno su ogni singolo lotto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTOR TOGGLE + PRODUCTS -->
+  <section class="section-sm" style="position:relative;z-index:1;">
+    <div style="padding:0 var(--pad);">
+      <div class="sector-toggle">
+        <div class="s-tab active" id="tab-retail" onclick="switchSection('retail')">Retail — Consumatore finale</div>
+        <div class="s-tab" id="tab-horeca" onclick="switchSection('horeca')">HO.RE.CA. — Professionisti</div>
+      </div>
+    </div>
+
+    <!-- RETAIL PANEL -->
+    <div class="product-panel active" id="panel-retail">
+      <div class="card-grid-3" style="margin:0 var(--pad);">
+        <div class="card reveal" data-tilt>
+          <span class="prod-emoji">🥣</span>
+          <div class="card-tag">Linea Retail · Sughi pronti</div>
+          <div class="card-title">Bravo Chef Sughi</div>
+          <div class="card-body">Sughi liofilizzati 100% naturali. Basta acqua calda per ritrovare il sapore autentico del fatto in casa, in pochi minuti.</div>
+          <div class="prod-tags">
+            <span class="prod-tag">Senza glutine</span>
+            <span class="prod-tag">100% naturale</span>
+            <span class="prod-tag">No conservanti</span>
+          </div>
+        </div>
+        <div class="card reveal reveal-delay-1" data-tilt>
+          <span class="prod-emoji">🍲</span>
+          <div class="card-tag">Linea Retail · Vellutate</div>
+          <div class="card-title">Bravo Chef Vellutate</div>
+          <div class="card-body">Vellutate di verdure liofilizzate con la stessa cremosità del fresco. Ingredienti semplici, gusto sorprendente.</div>
+          <div class="prod-tags">
+            <span class="prod-tag">Vegan</span>
+            <span class="prod-tag">100% naturale</span>
+            <span class="prod-tag">Lunga conservazione</span>
+          </div>
+        </div>
+        <div class="card reveal reveal-delay-2" data-tilt>
+          <span class="prod-emoji">🌿</span>
+          <div class="card-tag">Linea Snack · Naturale</div>
+          <div class="card-title">LYO Snacky</div>
+          <div class="card-body">Snack liofilizzati croccanti a base di verdura e frutta. Leggerissimi, naturali, perfetti per chi non vuole rinunciare al gusto sano.</div>
+          <div class="prod-tags">
+            <span class="prod-tag">Croccanti</span>
+            <span class="prod-tag">No zuccheri aggiunti</span>
+            <span class="prod-tag">Monoingrediente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HORECA PANEL -->
+    <div class="product-panel" id="panel-horeca">
+      <div class="card-grid-3" style="margin:0 var(--pad);">
+        <div class="card reveal" data-tilt>
+          <span class="prod-emoji">🌱</span>
+          <div class="card-tag">HO.RE.CA · Ingredienti chef</div>
+          <div class="card-title">Erbe Aromatiche</div>
+          <div class="card-body">Basilico, prezzemolo, erba cipollina, timo — liofilizzati al picco dell'aroma. Pronti all'uso, sempre disponibili, senza sprechi.</div>
+          <div class="prod-tags">
+            <span class="prod-tag">Pronto uso</span>
+            <span class="prod-tag">Alta concentrazione</span>
+          </div>
+        </div>
+        <div class="card reveal reveal-delay-1" data-tilt>
+          <span class="prod-emoji">🧀</span>
+          <div class="card-tag">HO.RE.CA · Latticini</div>
+          <div class="card-title">Formaggi Liofilizzati</div>
+          <div class="card-body">Parmigiano, pecorino, grana — liofilizzati per mantenere tutto il sapore. Perfetti per preparazioni gourmet e cotture ad alta temperatura.</div>
+          <div class="prod-tags">
+            <span class="prod-tag">Lunga shelf-life</span>
+            <span class="prod-tag">No catena freddo</span>
+          </div>
+        </div>
+        <div class="card reveal reveal-delay-2" data-tilt>
+          <span class="prod-emoji">🍓</span>
+          <div class="card-tag">HO.RE.CA · Materie prime</div>
+          <div class="card-title">Frutta &amp; Verdura Premium</div>
+          <div class="card-body">Fragole, mango, pomodoro, zucca — selezionati al picco della maturazione. Colori vibranti, aromi intensi, struttura perfetta.</div>
+          <div class="prod-tags">
+            <span class="prod-tag">100% naturale</span>
+            <span class="prod-tag">Stagione permanente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS SECTION -->
+  <section class="section gsap-section" style="background:linear-gradient(180deg,var(--space) 0%,var(--space-mid) 50%,var(--space) 100%);">
+    <p class="section-eyebrow reveal">I nostri brand</p>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:4rem;">Ogni nome,<br><em>una promessa</em></h2>
+
+    <div class="card-grid-3" style="border:1px solid rgba(232,228,220,0.06);">
+      <div class="brand-card reveal">
+        <div class="brand-bg">BC</div>
+        <div class="brand-name">Bravo Chef</div>
+        <div class="brand-tagline">Sughi &amp; Vellutate · Retail</div>
+        <div class="brand-desc">Il gusto del fatto in casa, senza compromessi. Bravo Chef porta la liofilizzazione direttamente nella cucina di tutti.</div>
+        <div class="brand-products">
+          <div class="brand-product-item">Sughi pronti — 6 varianti</div>
+          <div class="brand-product-item">Vellutate — 4 varianti</div>
+          <div class="brand-product-item">Disponibile nei supermercati</div>
+        </div>
+        <div class="brand-link">Scopri la linea →</div>
+      </div>
+      <div class="brand-card reveal reveal-delay-1">
+        <div class="brand-bg">LS</div>
+        <div class="brand-name">LYO Snacky</div>
+        <div class="brand-tagline">Snack naturali · Retail</div>
+        <div class="brand-desc">Croccante, naturale, sorprendente. LYO Snacky è lo snack che non ti aspettavi: verdura e frutta liofilizzata come non l'hai mai assaggiata.</div>
+        <div class="brand-products">
+          <div class="brand-product-item">Verdure — piselli, mais, carote</div>
+          <div class="brand-product-item">Frutta — fragole, mango, mela</div>
+          <div class="brand-product-item">Mono-ingrediente certificato</div>
+        </div>
+        <div class="brand-link">Scopri la linea →</div>
+      </div>
+      <div class="brand-card reveal reveal-delay-2">
+        <div class="brand-bg">HC</div>
+        <div class="brand-name">HO.RE.CA.</div>
+        <div class="brand-tagline">Ingredienti professionali · Food service</div>
+        <div class="brand-desc">Per i professionisti che non accettano compromessi. Ingredienti liofilizzati selezionati per la ristorazione di qualità.</div>
+        <div class="brand-products">
+          <div class="brand-product-item">Erbe aromatiche — 12 varietà</div>
+          <div class="brand-product-item">Formaggi — 6 varietà</div>
+          <div class="brand-product-item">Frutta &amp; verdura — 20+ varietà</div>
+        </div>
+        <div class="brand-link">Scopri la linea →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS BAND -->
+  <div class="certs-band reveal">
+    <span class="certs-label">Certificazioni</span>
+    <div class="certs-list">
+      <span class="cert-badge">BRC</span>
+      <span class="cert-badge">FDA</span>
+      <span class="cert-badge">IFS</span>
+      <span class="cert-badge">BIO</span>
+      <span class="cert-badge">ISO 22000</span>
+    </div>
+  </div>
+
+  <!-- CTA BAND -->
+  <section class="cta-band gsap-section">
+    <h2 class="cta-title reveal">Vuoi distribuire<br><em>i nostri prodotti?</em></h2>
+    <div class="hero-cta-group reveal reveal-delay-1">
+      <a href="lyo-europa.html#contact" class="btn btn-filled">Contattaci ora →</a>
+      <a href="area-professionisti.html" class="btn btn-outline">Area Professionisti</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">LYO <span>Europa</span></div>
+    <div class="footer-center">
+      <div>lyoeuropa.com</div>
+      <div class="dedication">per Andrea ✦</div>
+    </div>
+    <div class="footer-right">LYO Europa Srl — P.IVA IT02958710341<br>Fontanellato (PR), Italia &middot; © 2025</div>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="mailto:privacy@lyoeuropa.com">privacy@lyoeuropa.com</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="lyo-magic.js"></script>
+
+  <script>
+    /* Sector panel switcher — retail.html only */
+    function switchSection(s) {
+      document.querySelectorAll('.product-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.s-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('panel-' + s).classList.add('active');
+      document.getElementById('tab-' + s).classList.add('active');
+      /* Re-trigger reveal for newly shown cards */
+      document.querySelectorAll('#panel-' + s + ' .reveal').forEach(el => {
+        el.classList.remove('visible');
+        setTimeout(() => {
+          const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+          }, { threshold: 0.1 });
+          obs.observe(el);
+        }, 30);
+      });
+    }
+  </script>
+
+</body>
+</html>

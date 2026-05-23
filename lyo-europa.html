@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYO Europa — La Magia della Liofilizzazione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lyo-system.css">
+</head>
+<body>
+
+<canvas id="starfield-canvas"></canvas>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="page-transition"></div>
+
+<nav class="lyo-nav" id="navbar">
+  <a href="lyo-europa.html" class="nav-logo">LYO <span>Europa</span></a>
+  <ul class="nav-links">
+    <li><a href="chi-siamo.html" data-scramble>Chi siamo</a></li>
+    <li><a href="processo.html" data-scramble>Il Processo</a></li>
+    <li><a href="#products" data-scramble>Prodotti</a></li>
+    <li><a href="#contact" data-scramble>Contatti</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="area-professionisti.html" class="nav-area-btn">Area Professionisti</a>
+    <a href="area-utente.html" class="nav-area-btn">Area Utente</a>
+    <span class="nav-lang">IT / EN</span>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="lyo-hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Fontanellato, Parma · Dal 1998</p>
+    <h1 class="hero-title">La natura<br><em>non dimentica</em><br>nulla</h1>
+    <p class="hero-sub">La liofilizzazione porta ogni alimento alle temperature dello spazio cosmico. Lì, l'acqua evapora. I sapori, i profumi, l'anima del prodotto — restano.</p>
+    <div class="hero-cta-group">
+      <a href="processo.html" class="btn btn-outline">Scopri il processo →</a>
+      <a href="chi-siamo.html" class="btn btn-ghost">La nostra storia</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scorri</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- ═══ NUMBERS ═══ -->
+<div class="numbers-band reveal">
+  <div class="number-item">
+    <div class="number-value" data-count="100" data-suffix="+">100+</div>
+    <div class="number-label">Prodotti sviluppati</div>
+  </div>
+  <div class="number-item">
+    <div class="number-value" data-count="5000" data-suffix="">5.000</div>
+    <div class="number-label">kg lavorati al giorno</div>
+  </div>
+  <div class="number-item">
+    <div class="number-value" data-count="15">15</div>
+    <div class="number-label">Paesi in cui esportiamo</div>
+  </div>
+</div>
+
+<!-- ═══ LYO INTRO ═══ -->
+<section class="section gsap-section" id="about">
+  <div class="intro-block">
+    <div class="intro-sticky">
+      <p class="section-eyebrow reveal">Il nostro processo</p>
+      <h2 class="intro-heading reveal reveal-delay-1">Quando la scienza<br><em>diventa arte</em></h2>
+    </div>
+    <div class="intro-body reveal reveal-delay-2">
+      <p>La <strong>liofilizzazione</strong> è un processo di disidratazione che avviene a temperature estremo-basse, sottoponendo il prodotto al vuoto. Il ghiaccio passa direttamente dallo stato solido a vapore — senza mai diventare acqua.</p>
+      <p>Il risultato è straordinario: <strong>tutto ciò che rende vivo un alimento</strong> — colori, aromi, vitamine, struttura — rimane intatto. Solo l'acqua scompare.</p>
+      <div class="big-quote">"Portare un prodotto alla temperatura dello spazio è come toccare qualcosa di magico. I nutrienti restano, l'acqua scompare. La natura non dimentica nulla."</div>
+      <p>LYO Europa padroneggia questa tecnologia da decenni, con 3 tunnel di liofilizzazione e un laboratorio di analisi interno, producendo <strong>alimenti 100% naturali</strong> per industria, ristorazione e retail.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THERMOMETER SCROLL ═══ -->
+<section class="thermo-section" id="process">
+  <div class="thermo-sticky" id="thermoSticky">
+    <div class="thermo-bg-temp" id="thermoBg"></div>
+    <div class="stars-phase" id="starsPhase"></div>
+    <div class="thermo-phase-badge" id="phaseBadge">Inizio processo</div>
+    <div class="thermo-layout">
+      <div class="thermo-info">
+        <div class="temp-display" id="tempDisplay">+20°</div>
+        <div class="temp-unit">Celsius</div>
+        <div class="temp-label" id="phaseLabel">Temperatura ambiente</div>
+        <div class="temp-desc" id="phaseDesc">Il prodotto fresco entra nella camera. Ancora vivo, ancora intero.</div>
+      </div>
+      <div class="thermometer">
+        <div class="thermo-tube" id="thermoTube">
+          <div class="thermo-fill" id="thermoFill"></div>
+          <div class="thermo-scale">
+            <span class="thermo-tick">+20°</span>
+            <span class="thermo-tick">0°</span>
+            <span class="thermo-tick">−40°</span>
+            <span class="thermo-tick">−80°</span>
+          </div>
+        </div>
+        <div class="thermo-bulb-wrap"><div class="thermo-bulb" id="thermoBulb"></div></div>
+      </div>
+      <div class="thermo-info-right">
+        <div style="font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--sage-light);margin-bottom:1.2rem;opacity:0.7">Il processo</div>
+        <div style="font-family:var(--font-display);font-size:1.4rem;font-weight:300;color:var(--ivory);margin-bottom:0.9rem;line-height:1.3;transition:all 0.6s" id="processStep">—</div>
+        <div style="font-size:0.82rem;line-height:1.78;color:rgba(232,228,220,0.44);font-weight:300;transition:all 0.6s" id="processDetail">Scorri per scoprire la trasformazione</div>
+      </div>
+    </div>
+    <div class="thermo-progress-dots" id="thermoProgressDots"></div>
+  </div>
+</section>
+
+<!-- ═══ PHASES ═══ -->
+<section class="section gsap-section" style="background:linear-gradient(180deg,var(--space-deep) 0%,var(--space) 100%);padding-top:9rem">
+  <div style="max-width:600px;margin-bottom:5rem">
+    <p class="section-eyebrow reveal">Le quattro fasi</p>
+    <h2 class="section-title reveal reveal-delay-1">Un viaggio verso<br><em>il gelo cosmico</em></h2>
+  </div>
+  <div class="card-grid-4">
+    <div class="card reveal" data-tilt>
+      <div class="card-num">01</div>
+      <div class="card-tag">Preparazione</div>
+      <div class="card-title">Il prodotto fresco entra in camera</div>
+      <div class="card-body">Selezione e preparazione delle materie prime. Ogni dettaglio conta prima che il processo inizi.</div>
+      <div class="card-bg-letter" style="font-size:5rem;bottom:1.5rem;right:1.5rem;color:rgba(232,228,220,0.04)">+20°</div>
+    </div>
+    <div class="card reveal reveal-delay-1" data-tilt>
+      <div class="card-num">02</div>
+      <div class="card-tag">Congelamento</div>
+      <div class="card-title">La temperatura crolla. Il prodotto si cristallizza</div>
+      <div class="card-body">Portato tra −40° e −80°C, ogni molecola d'acqua si trasforma in ghiaccio puro.</div>
+      <div class="card-bg-letter" style="font-size:5rem;bottom:1.5rem;right:1.5rem;color:rgba(122,170,212,0.06)">−80°</div>
+    </div>
+    <div class="card reveal reveal-delay-2" data-tilt>
+      <div class="card-num">03</div>
+      <div class="card-tag">Sublimazione</div>
+      <div class="card-title">Il vuoto trasforma il ghiaccio in vapore</div>
+      <div class="card-body">La pressione crolla. Il ghiaccio sublima — da solido a gas, saltando lo stato liquido. Pura magia.</div>
+      <div class="card-bg-letter" style="font-size:5rem;bottom:1.5rem;right:1.5rem;color:rgba(107,143,113,0.06)">−50°</div>
+    </div>
+    <div class="card reveal reveal-delay-3" data-tilt>
+      <div class="card-num">04</div>
+      <div class="card-tag">Il risultato</div>
+      <div class="card-title">Nutrienti intatti. Nessuna acqua. Pura essenza</div>
+      <div class="card-body">Meno dell'1% di umidità. Aromi, colori, vitamine: tutto preservato per anni senza conservanti.</div>
+      <div class="card-bg-letter" style="font-size:5rem;bottom:1.5rem;right:1.5rem;color:rgba(201,168,76,0.06)">&lt;1%</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRODUCTS ═══ -->
+<section class="section gsap-section" id="products">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem">
+    <div>
+      <p class="section-eyebrow reveal">La nostra offerta</p>
+      <h2 class="section-title reveal reveal-delay-1">Prodotti per ogni<br><em>settore</em></h2>
+    </div>
+    <a href="retail.html" style="font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage-light);border-bottom:1px solid rgba(107,143,113,0.3);padding-bottom:0.2rem" class="reveal">Vedi tutti →</a>
+  </div>
+  <div class="card-grid-3">
+    <div class="card reveal" data-tilt>
+      <div class="card-tag">Settore</div>
+      <div class="card-title" style="font-size:2.4rem;margin-bottom:1.2rem">Industria</div>
+      <div class="card-body" style="margin-bottom:2.5rem">Ingredienti liofilizzati per la trasformazione alimentare industriale. Massima qualità, grande scala.</div>
+      <a href="retail.html" class="btn btn-ghost" style="font-size:0.68rem;padding:0.7rem 1.8rem">Scopri →</a>
+      <div class="card-bg-letter">I</div>
+    </div>
+    <div class="card reveal reveal-delay-1" data-tilt>
+      <div class="card-tag">Settore</div>
+      <div class="card-title" style="font-size:2.4rem;margin-bottom:1.2rem">HO.RE.CA.</div>
+      <div class="card-body" style="margin-bottom:2.5rem">Per chef e professionisti della ristorazione. Ingredienti premium che preservano il gusto del fresco.</div>
+      <a href="area-professionisti.html" class="btn btn-ghost" style="font-size:0.68rem;padding:0.7rem 1.8rem">Scopri →</a>
+      <div class="card-bg-letter">H</div>
+    </div>
+    <div class="card reveal reveal-delay-2" data-tilt>
+      <div class="card-tag">Settore</div>
+      <div class="card-title" style="font-size:2.4rem;margin-bottom:1.2rem">Retail</div>
+      <div class="card-body" style="margin-bottom:2.5rem">Bravo Chef, LYO Snacky e le vellutate per il consumatore finale. Natura in una confezione.</div>
+      <a href="retail.html" class="btn btn-ghost" style="font-size:0.68rem;padding:0.7rem 1.8rem">Scopri →</a>
+      <div class="card-bg-letter">R</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PAGES NAV ═══ -->
+<section class="section-sm gsap-section" style="background:rgba(232,228,220,0.015);position:relative;z-index:1">
+  <div style="margin-bottom:3rem">
+    <p class="section-eyebrow reveal">Esplora il sito</p>
+    <h2 class="section-title reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,3.5rem)">Ogni pagina,<br><em>una storia</em></h2>
+  </div>
+  <div class="page-links-grid">
+    <a href="chi-siamo.html" class="page-link-card reveal">
+      <div><div class="page-link-tag">L'azienda</div><div class="page-link-title">Chi siamo</div></div>
+      <div class="page-link-arrow">→</div>
+    </a>
+    <a href="processo.html" class="page-link-card reveal reveal-delay-1">
+      <div><div class="page-link-tag">La tecnologia</div><div class="page-link-title">Il Processo</div></div>
+      <div class="page-link-arrow">→</div>
+    </a>
+    <a href="area-utente.html" class="page-link-card reveal reveal-delay-2">
+      <div><div class="page-link-tag">Consumatori</div><div class="page-link-title">Area Utente</div></div>
+      <div class="page-link-arrow">→</div>
+    </a>
+    <a href="area-professionisti.html" class="page-link-card reveal reveal-delay-3">
+      <div><div class="page-link-tag">Professionisti</div><div class="page-link-title">Area Pro</div></div>
+      <div class="page-link-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ CERTS ═══ -->
+<div class="certs-band reveal">
+  <span class="certs-label">Certificazioni / Certifications</span>
+  <div class="certs-list">
+    <div class="cert-badge">BRC</div>
+    <div class="cert-badge">BIO</div>
+    <div class="cert-badge">FDA</div>
+    <div class="cert-badge">MSC</div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section gsap-section" id="contact">
+  <div class="contact-grid">
+    <div>
+      <p class="section-eyebrow reveal">Lavoriamo insieme</p>
+      <h2 class="section-title reveal reveal-delay-1" style="font-size:clamp(2.5rem,4.5vw,4.5rem);margin-bottom:1.5rem">Portiamo la tua<br><em>idea</em> alle stelle</h2>
+      <p class="section-sub reveal reveal-delay-2" style="margin-bottom:2.8rem">Sviluppo R&D su misura, lavorazioni conto terzi, partnership commerciali.<br>Siamo a Fontanellato, Parma — e presenti in 15 paesi.</p>
+      <div style="display:flex;flex-direction:column;gap:1.5rem">
+        <div style="display:flex;align-items:center;gap:1rem;border-bottom:1px solid rgba(232,228,220,0.07);padding-bottom:1.5rem" class="reveal">
+          <div style="width:40px;height:40px;border:1px solid rgba(107,143,113,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--sage-light);flex-shrink:0">✉</div>
+          <div>
+            <div style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(232,228,220,0.3);margin-bottom:0.2rem">Email</div>
+            <div style="font-size:0.95rem;color:var(--ivory);font-weight:300">info@lyoeuropa.it</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;border-bottom:1px solid rgba(232,228,220,0.07);padding-bottom:1.5rem" class="reveal reveal-delay-1">
+          <div style="width:40px;height:40px;border:1px solid rgba(107,143,113,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--sage-light);flex-shrink:0">☎</div>
+          <div>
+            <div style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(232,228,220,0.3);margin-bottom:0.2rem">Telefono</div>
+            <div style="font-size:0.95rem;color:var(--ivory);font-weight:300">+39 0521 822473</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem" class="reveal reveal-delay-2">
+          <div style="width:40px;height:40px;border:1px solid rgba(107,143,113,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--sage-light);flex-shrink:0">◎</div>
+          <div>
+            <div style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(232,228,220,0.3);margin-bottom:0.2rem">Sede</div>
+            <div style="font-size:0.95rem;color:var(--ivory);font-weight:300">Fontanellato (PR), Italia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <div class="glass-card">
+        <div style="font-size:0.66rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--sage-light);margin-bottom:2rem;opacity:0.7">Scrivici</div>
+        <div class="area-form" style="gap:1.1rem">
+          <div class="form-group"><label>Nome / Azienda</label><input type="text" placeholder="La tua azienda"></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="email@azienda.com"></div>
+          <div class="form-group"><label>Settore di interesse</label>
+            <select>
+              <option>Industria alimentare</option>
+              <option>HO.RE.CA.</option>
+              <option>Retail / Distribuzione</option>
+              <option>R&D / Partnership</option>
+              <option>Conto terzi</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Messaggio</label><textarea rows="4" placeholder="Raccontaci il tuo progetto..."></textarea></div>
+          <button class="btn btn-outline" style="align-self:flex-start;margin-top:0.5rem">Invia richiesta →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">LYO <span>Europa</span></div>
+  <div class="footer-center">
+    <div style="letter-spacing:0.2em">✦ ✦ ✦</div>
+    <div class="dedication">per Andrea</div>
+  </div>
+  <div class="footer-right">LYO Europa Srl — P.IVA IT02958710341<br>Fontanellato (PR), Italia · © 2025</div>
+  <div class="footer-legal">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="cookie-policy.html">Cookie Policy</a>
+    <a href="mailto:privacy@lyoeuropa.com">privacy@lyoeuropa.com</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="lyo-magic.js"></script>
+</body>
+</html>

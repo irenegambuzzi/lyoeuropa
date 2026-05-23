@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Siamo — LYO Europa</title>
+  <meta name="description" content="LYO Europa nasce a Fontanellato, Parma nel 1998. Scopri la nostra storia, i valori e la passione che ci guida ogni giorno.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="lyo-system.css">
+</head>
+<body>
+
+  <canvas id="starfield-canvas"></canvas>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div id="page-transition"></div>
+
+  <!-- NAV -->
+  <nav class="lyo-nav">
+    <a href="lyo-europa.html" class="nav-logo">LYO <span>Europa</span></a>
+    <ul class="nav-links">
+      <li><a href="chi-siamo.html" class="active" data-scramble>Chi siamo</a></li>
+      <li><a href="processo.html" data-scramble>Il Processo</a></li>
+      <li><a href="retail.html" data-scramble>Prodotti</a></li>
+      <li><a href="lyo-europa.html#contact" data-scramble>Contatti</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="area-professionisti.html" class="nav-area-btn">Area Professionisti</a>
+      <a href="area-utente.html" class="nav-area-btn">Area Utente</a>
+      <a href="#" class="nav-lang">IT / EN</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-accent"></div>
+    <div class="page-hero-num">01</div>
+    <div>
+      <p class="page-eyebrow">L'azienda &middot; Since 1998</p>
+      <h1 class="page-title">Chi<br><em>siamo</em></h1>
+    </div>
+  </section>
+
+  <!-- INTRO BLOCK -->
+  <section class="section gsap-section">
+    <div class="intro-block">
+      <div class="intro-sticky reveal">
+        <p class="section-eyebrow">La nostra storia</p>
+        <h2 class="intro-heading">Una passione<br>che diventa<br><em>eccellenza</em></h2>
+      </div>
+      <div class="intro-body reveal reveal-delay-1">
+        <p>LYO Europa nasce a <strong>Fontanellato, Parma</strong> — nel cuore della Food Valley italiana — con una missione precisa: trasformare la liofilizzazione da tecnologia industriale a strumento di eccellenza alimentare.</p>
+        <p>Oggi siamo uno dei <strong>maggiori produttori europei di alimenti liofilizzati</strong>, con tre tunnel di liofilizzazione, una torre di atomizzazione Niro e linee complete di confezionamento e macinazione. Produciamo per l'industria, per i migliori chef, e per il consumatore finale.</p>
+        <div class="big-quote">"Portare un prodotto alla temperatura dello spazio è come toccare qualcosa di magico. I nutrienti restano, l'acqua scompare. La natura non dimentica nulla."</div>
+        <p>Il nostro laboratorio interno garantisce analisi chimiche e organolettiche su ogni lotto. L'attività di <strong>Ricerca & Sviluppo</strong> è costante, spesso guidata dalle richieste dei nostri clienti: perché ogni sfida è un'opportunità di crescita.</p>
+        <p>Esportiamo in <strong>15 paesi</strong>, lavoriamo su commessa per conto terzi e sviluppiamo nuovi prodotti da zero. Ogni giorno lavoriamo oltre <strong>5.000 kg di materie prime</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section gsap-section" style="background: linear-gradient(180deg, var(--space) 0%, var(--space-mid) 50%, var(--space) 100%);">
+    <p class="section-eyebrow reveal">Il percorso</p>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 5rem;">Una storia di<br><em>crescita continua</em></h2>
+
+    <div class="timeline-wrap">
+
+      <div class="tl-item reveal">
+        <div class="tl-left">
+          <div class="tl-year">1998</div>
+          <div class="tl-text">Fondazione di LYO Europa a Fontanellato (PR). I primi tunnel di liofilizzazione entrano in funzione.</div>
+        </div>
+        <div class="tl-center"><div class="tl-dot"></div></div>
+        <div class="tl-right"></div>
+      </div>
+
+      <div class="tl-item reveal reveal-delay-1">
+        <div class="tl-left"></div>
+        <div class="tl-center"><div class="tl-dot"></div></div>
+        <div class="tl-right">
+          <div class="tl-year">2003</div>
+          <div class="tl-text">Installazione della Torre di Atomizzazione Niro. L'offerta si espande verso nuovi segmenti di mercato.</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-left">
+          <div class="tl-year">2010</div>
+          <div class="tl-text">Certificazione BRC. LYO Europa entra nei mercati internazionali e inizia l'export in Europa.</div>
+        </div>
+        <div class="tl-center"><div class="tl-dot"></div></div>
+        <div class="tl-right"></div>
+      </div>
+
+      <div class="tl-item reveal reveal-delay-1">
+        <div class="tl-left"></div>
+        <div class="tl-center"><div class="tl-dot"></div></div>
+        <div class="tl-right">
+          <div class="tl-year">2016</div>
+          <div class="tl-text">Certificazione FDA. Apertura ai mercati statunitensi e lancio della linea BIO certificata.</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-left">
+          <div class="tl-year">2020</div>
+          <div class="tl-text">Lancio del brand consumer: Bravo Chef e LYO Snacky entrano nel retail con grande successo.</div>
+        </div>
+        <div class="tl-center"><div class="tl-dot"></div></div>
+        <div class="tl-right"></div>
+      </div>
+
+      <div class="tl-item reveal reveal-delay-1">
+        <div class="tl-left"></div>
+        <div class="tl-center"><div class="tl-dot"></div></div>
+        <div class="tl-right">
+          <div class="tl-year">Oggi</div>
+          <div class="tl-text">100+ prodotti, 15 paesi, 5.000 kg al giorno. La storia continua.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VALUES GRID -->
+  <section class="section gsap-section">
+    <div style="max-width: 560px; margin-bottom: 5rem;">
+      <p class="section-eyebrow reveal">I nostri valori</p>
+      <h2 class="section-title reveal reveal-delay-1">Cosa ci guida<br><em>ogni giorno</em></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal" data-tilt>
+        <span class="value-icon">◈</span>
+        <div class="value-tag">Qualità</div>
+        <div class="value-title">Zero compromessi sul prodotto</div>
+        <div class="value-desc">Analisi interne su ogni lotto, materie prime selezionate, processi certificati. La qualità non è un optional, è il punto di partenza.</div>
+      </div>
+      <div class="value-card reveal reveal-delay-1" data-tilt>
+        <span class="value-icon">◎</span>
+        <div class="value-tag">Natura</div>
+        <div class="value-title">100% naturale, senza additivi</div>
+        <div class="value-desc">Nessun conservante. Nessun colorante. Solo il prodotto fresco, privato dell'acqua dalla fisica — non dalla chimica.</div>
+      </div>
+      <div class="value-card reveal reveal-delay-2" data-tilt>
+        <span class="value-icon">✦</span>
+        <div class="value-tag">Ricerca</div>
+        <div class="value-title">Innovazione su misura del cliente</div>
+        <div class="value-desc">Il nostro laboratorio R&D non lavora in astratto: risponde alle esigenze reali di chi produce, cucina e mangia.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS BAND -->
+  <div class="numbers-band four">
+    <div class="number-item reveal">
+      <div class="number-value">1998</div>
+      <div class="number-label">Anno di fondazione</div>
+    </div>
+    <div class="number-item reveal reveal-delay-1">
+      <div class="number-value" data-count="3">3</div>
+      <div class="number-label">Tunnel di liofilizzazione</div>
+    </div>
+    <div class="number-item reveal reveal-delay-2">
+      <div class="number-value" data-count="100" data-suffix="+">100+</div>
+      <div class="number-label">Prodotti sviluppati</div>
+    </div>
+    <div class="number-item reveal reveal-delay-3">
+      <div class="number-value" data-count="15">15</div>
+      <div class="number-label">Paesi di esportazione</div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS BAND -->
+  <div class="certs-band reveal">
+    <span class="certs-label">Certificazioni</span>
+    <div class="certs-list">
+      <span class="cert-badge">BRC</span>
+      <span class="cert-badge">FDA</span>
+      <span class="cert-badge">IFS</span>
+      <span class="cert-badge">BIO</span>
+      <span class="cert-badge">ISO 22000</span>
+    </div>
+  </div>
+
+  <!-- CTA BAND -->
+  <section class="cta-band gsap-section">
+    <h2 class="cta-title reveal">Vuoi conoscerci<br><em>meglio?</em></h2>
+    <div class="hero-cta-group reveal reveal-delay-1">
+      <a href="processo.html" class="btn btn-filled">Scopri il processo →</a>
+      <a href="lyo-europa.html#contact" class="btn btn-outline">Contattaci</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">LYO <span>Europa</span></div>
+    <div class="footer-center">
+      <div>lyoeuropa.com</div>
+      <div class="dedication">per Andrea ✦</div>
+    </div>
+    <div class="footer-right">LYO Europa Srl — P.IVA IT02958710341<br>Fontanellato (PR), Italia &middot; © 2025</div>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="mailto:privacy@lyoeuropa.com">privacy@lyoeuropa.com</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="lyo-magic.js"></script>
+
+</body>
+</html>

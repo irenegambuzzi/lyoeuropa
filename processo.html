@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Processo — LYO Europa</title>
+  <meta name="description" content="Da +20°C a −80°C. Il viaggio della liofilizzazione: dalla temperatura ambiente alle profondità dello spazio cosmico.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="lyo-system.css">
+</head>
+<body>
+
+  <canvas id="starfield-canvas"></canvas>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div id="page-transition"></div>
+
+  <!-- NAV -->
+  <nav class="lyo-nav">
+    <a href="lyo-europa.html" class="nav-logo">LYO <span>Europa</span></a>
+    <ul class="nav-links">
+      <li><a href="chi-siamo.html" data-scramble>Chi siamo</a></li>
+      <li><a href="processo.html" class="active" data-scramble>Il Processo</a></li>
+      <li><a href="retail.html" data-scramble>Prodotti</a></li>
+      <li><a href="lyo-europa.html#contact" data-scramble>Contatti</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="area-professionisti.html" class="nav-area-btn">Area Professionisti</a>
+      <a href="area-utente.html" class="nav-area-btn">Area Utente</a>
+      <a href="#" class="nav-lang">IT / EN</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-accent"></div>
+    <div class="page-hero-num">02</div>
+    <div>
+      <p class="page-eyebrow">Lyophilization &middot; La scienza del freddo</p>
+      <h1 class="page-title">Il<br><em>Processo</em></h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section gsap-section">
+    <div class="intro-block">
+      <div class="intro-sticky reveal">
+        <p class="section-eyebrow">Il viaggio</p>
+        <h2 class="intro-heading">Da +20° a −80°C.<br><em>Fino allo spazio.</em></h2>
+      </div>
+      <div class="intro-body reveal reveal-delay-1">
+        <p>La liofilizzazione è la tecnologia che porta il cibo alla <strong>temperatura dello spazio cosmico</strong>. Un processo fisico, non chimico, che preserva la vita molecolare del prodotto attraverso il freddo estremo e il vuoto assoluto.</p>
+        <p>Nessun conservante. Nessun additivo. Solo <strong>fisica applicata alla natura</strong>: il ghiaccio si trasforma in vapore senza mai diventare acqua liquida, lasciando intatte strutture cellulari, vitamine, aromi, colori.</p>
+        <div class="big-quote">"Il momento in cui il ghiaccio diventa vapore senza passare per il liquido — quella è la magia. È la fisica del punto triplo dell'acqua. È dove la natura svela i suoi segreti."</div>
+        <p>Scendi con noi nel viaggio. Dalla temperatura di una cucina alle profondità dello spazio, fase per fase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THERMOMETER SCROLL -->
+  <section class="thermo-section" id="process">
+    <div class="thermo-sticky">
+      <div class="thermo-bg-temp" id="thermoBg"></div>
+      <div class="stars-phase" id="starsPhase"></div>
+      <div class="thermo-phase-badge" id="phaseBadge">↓ Inizio del viaggio</div>
+
+      <div class="thermo-layout">
+
+        <!-- LEFT PANEL -->
+        <div class="thermo-info">
+          <div class="temp-display" id="tempDisplay">+20°</div>
+          <div class="temp-unit">Celsius</div>
+          <div class="temp-label" id="phaseLabel">Temperatura ambiente</div>
+          <div class="temp-desc" id="phaseDesc">Il prodotto fresco entra nella camera di liofilizzazione. Ancora vivo, ancora intero.</div>
+        </div>
+
+        <!-- CENTER THERMOMETER -->
+        <div class="thermometer">
+          <div class="thermo-tube" style="position:relative;">
+            <div class="thermo-fill" id="thermoFill"></div>
+            <div class="thermo-scale">
+              <span class="thermo-tick">+20°</span>
+              <span class="thermo-tick">0°</span>
+              <span class="thermo-tick">−40°</span>
+              <span class="thermo-tick">−80°</span>
+            </div>
+          </div>
+          <div class="thermo-bulb-wrap">
+            <div class="thermo-bulb" id="thermoBulb"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="thermo-info-right">
+          <div style="font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(232,228,220,0.28);margin-bottom:1.2rem;">Cosa sta succedendo</div>
+          <div style="font-family:var(--font-display);font-size:1.55rem;font-weight:300;color:var(--ivory);margin-bottom:0.8rem;line-height:1.25;" id="processStep">Prodotto fresco in entrata</div>
+          <div style="font-size:0.86rem;line-height:1.78;color:rgba(232,228,220,0.45);font-weight:300;margin-bottom:2rem;" id="processDetail">Materie prime selezionate: vegetali, frutta, erbe, formaggi, carne, pesce.</div>
+        </div>
+
+      </div>
+
+      <div class="thermo-progress-dots" id="thermoProgressDots"></div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section gsap-section">
+    <div style="max-width:600px;margin-bottom:5rem;">
+      <p class="section-eyebrow reveal">I vantaggi</p>
+      <h2 class="section-title reveal reveal-delay-1">Perché la liofilizzazione<br><em>è superiore</em></h2>
+    </div>
+    <div class="card-grid-2">
+      <div class="card reveal" data-tilt>
+        <div class="card-num">01</div>
+        <div class="card-title">Qualità organolettica intatta</div>
+        <div class="card-body">Colori, aromi, sapori e struttura rimangono identici al prodotto fresco. Nessun altro metodo di conservazione ci si avvicina.</div>
+      </div>
+      <div class="card reveal reveal-delay-1" data-tilt>
+        <div class="card-num">02</div>
+        <div class="card-title">Zero conservanti, zero additivi</div>
+        <div class="card-body">L'assenza di acqua è l'unico conservante naturale necessario. Il prodotto è 100% naturale per definizione fisica.</div>
+      </div>
+      <div class="card reveal" data-tilt>
+        <div class="card-num">03</div>
+        <div class="card-title">Lunga conservazione senza freddo</div>
+        <div class="card-body">Fino a 2–5 anni a temperatura ambiente. Nessuna catena del freddo necessaria. Rivoluzionario per la logistica alimentare.</div>
+      </div>
+      <div class="card reveal reveal-delay-1" data-tilt>
+        <div class="card-num">04</div>
+        <div class="card-title">Peso ridotto del 70–90%</div>
+        <div class="card-body">Senza acqua, il prodotto pesa una frazione dell'originale. Perfetto per trasporto, spedizione e stoccaggio ottimizzato.</div>
+      </div>
+      <div class="card reveal" data-tilt>
+        <div class="card-num">05</div>
+        <div class="card-title">Sicurezza sanitaria assoluta</div>
+        <div class="card-body">Senza acqua, i batteri non possono sopravvivere né proliferare. Il prodotto è microbiologicamente sicuro senza trattamenti chimici.</div>
+      </div>
+      <div class="card reveal reveal-delay-1" data-tilt>
+        <div class="card-num">06</div>
+        <div class="card-title">Reidratazione rapida e perfetta</div>
+        <div class="card-body">Basta aggiungere acqua per ritrovare il prodotto originale. La struttura porosa creata dal processo lo consente in pochi minuti.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHASE DIAGRAM STATIC -->
+  <section class="section gsap-section" style="background:linear-gradient(180deg,var(--space) 0%,var(--space-mid) 50%,var(--space) 100%);">
+    <p class="section-eyebrow reveal">Il diagramma di fase</p>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:4rem;">La sublimazione:<br><em>da solido a vapore</em></h2>
+
+    <div class="reveal" style="display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-top:2rem;">
+
+      <div style="padding:2.5rem 2rem;background:rgba(232,228,220,0.03);border:1px solid rgba(232,228,220,0.08);border-radius:4px;text-align:center;min-width:180px;">
+        <div style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--ivory);margin-bottom:0.3rem;">+20°C</div>
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-light);margin-bottom:0.5rem;">Prodotto fresco</div>
+        <div style="font-size:0.75rem;line-height:1.5;color:rgba(232,228,220,0.35);">Acqua libera ~80%</div>
+      </div>
+
+      <div style="padding:0 1rem;color:rgba(107,143,113,0.4);font-size:1.4rem;">→</div>
+
+      <div style="padding:2.5rem 2rem;background:rgba(232,228,220,0.03);border:1px solid rgba(232,228,220,0.08);border-radius:4px;text-align:center;min-width:180px;">
+        <div style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:#9fc7de;margin-bottom:0.3rem;">−80°C</div>
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-light);margin-bottom:0.5rem;">Congelamento</div>
+        <div style="font-size:0.75rem;line-height:1.5;color:rgba(232,228,220,0.35);">Acqua → ghiaccio</div>
+      </div>
+
+      <div style="padding:0 1rem;color:rgba(107,143,113,0.4);font-size:1.4rem;">→</div>
+
+      <div style="padding:2.5rem 2rem;background:rgba(232,228,220,0.03);border:1px solid rgba(107,143,113,0.3);border-radius:4px;text-align:center;min-width:180px;">
+        <div style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--sage-light);margin-bottom:0.3rem;">−50°C</div>
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-light);margin-bottom:0.5rem;">Sublimazione</div>
+        <div style="font-size:0.75rem;line-height:1.5;color:rgba(232,228,220,0.35);">Ghiaccio → vapore</div>
+      </div>
+
+      <div style="padding:0 1rem;color:rgba(107,143,113,0.4);font-size:1.4rem;">→</div>
+
+      <div style="padding:2.5rem 2rem;background:rgba(232,228,220,0.03);border:1px solid rgba(232,228,220,0.08);border-radius:4px;text-align:center;min-width:180px;">
+        <div style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--ivory);margin-bottom:0.3rem;">&lt;1%</div>
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-light);margin-bottom:0.5rem;">Prodotto pronto</div>
+        <div style="font-size:0.75rem;line-height:1.5;color:rgba(232,228,220,0.35);">Umidità residua</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUBLIMATION EXPLAINER -->
+  <section class="section gsap-section">
+    <div class="intro-block">
+      <div class="intro-sticky reveal">
+        <p class="section-eyebrow">La fisica</p>
+        <h2 class="intro-heading"><em>Da solido a gas,</em><br>senza il liquido.</h2>
+      </div>
+      <div class="intro-body reveal reveal-delay-1">
+        <p>Nel diagramma di fase dell'acqua esiste un punto chiamato <strong>punto triplo</strong> — la condizione in cui acqua solida, liquida e vapore coesistono in equilibrio.</p>
+        <p>La liofilizzazione porta il prodotto <strong>al di sotto di questo punto</strong>: con la pressione ridotta al minimo e la temperatura abbassata a −80°C, il ghiaccio sublima direttamente. L'acqua scompare senza mai diventare liquida.</p>
+        <p>È questo che preserva le cellule intatte: non c'è mai pressione osmotica, non c'è mai dissoluzione. <strong>La struttura rimane quella della vita.</strong></p>
+        <p>Stessa tecnica usata per i cibi degli astronauti della NASA — solo che LYO Europa la applica alla qualità gastronomica italiana.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band gsap-section">
+    <h2 class="cta-title reveal">Vuoi la nostra tecnologia<br><em>per il tuo prodotto?</em></h2>
+    <div class="hero-cta-group reveal reveal-delay-1">
+      <a href="area-professionisti.html" class="btn btn-filled">Entra nell'Area Professionisti →</a>
+      <a href="lyo-europa.html#contact" class="btn btn-outline">Contattaci</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">LYO <span>Europa</span></div>
+    <div class="footer-center">
+      <div>lyoeuropa.com</div>
+      <div class="dedication">per Andrea ✦</div>
+    </div>
+    <div class="footer-right">LYO Europa Srl — P.IVA IT02958710341<br>Fontanellato (PR), Italia &middot; © 2025</div>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="mailto:privacy@lyoeuropa.com">privacy@lyoeuropa.com</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="lyo-magic.js"></script>
+
+</body>
+</html>
